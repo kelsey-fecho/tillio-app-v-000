@@ -15,7 +15,6 @@ class CreatePlants < ActiveRecord::Migration[5.2]
       t.string :susceptibility
       t.string :description
       t.string :landscape_categories
-
       t.timestamps
     end
   end
