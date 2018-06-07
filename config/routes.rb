@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'plants#index'
   resources :users, :plants
 
-  get '/signin' => 'sessions#new'
-  post '/signin' => 'session#create'
+  get '/login' => 'sessions#new'
+  post '/login' => 'session#create'
+  post '/logout' => 'session#destroy'
 end
