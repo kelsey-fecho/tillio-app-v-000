@@ -9,6 +9,6 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
 
-  get 'auth/:provider/callback', to: 'sessions#google'
+  get '/auth/facebook/callback' => 'sessions#create'
   get 'auth/failure', to: redirect('/')
 end
