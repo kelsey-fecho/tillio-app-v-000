@@ -8,8 +8,9 @@ class SessionsController < ApplicationController
     return head(:forbidden) unless @user.authenticate(params[:password])
     session[:user_id] = params[:user][:id]
     redirect_to '/'
+  end
 
-    def destroy
-      session.delete :user_id
-    end
+  def destroy
+    session.delete :user_id
+  end
 end
