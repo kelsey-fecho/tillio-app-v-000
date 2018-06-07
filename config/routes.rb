@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   post '/logout' => 'sessions#destroy'
 
   get '/signup' => 'users#new'
+
+  get 'auth/:provider/callback', to: 'sessions#google'
+  get 'auth/failure', to: redirect('/')
 end

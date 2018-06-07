@@ -10,6 +10,12 @@ class SessionsController < ApplicationController
     redirect_to '/'
   end
 
+  def google
+    user = User.from_omniauth(env["omniauth.auth"])
+    session[:user_id] = user.id
+    redirect_to root_path
+  end
+
   def destroy
     session.delete :user_id
     redirect_to '/'
