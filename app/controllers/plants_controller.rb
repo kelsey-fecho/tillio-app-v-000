@@ -3,5 +3,6 @@ class PlantsController < ApplicationController
     if !logged_in?
       redirect_to '/signin'
     end
+    @plants = Plant.all
   end
 end

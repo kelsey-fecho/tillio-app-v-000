@@ -1,0 +1,11 @@
+<!--want a link here to "Create a New User" -->
+
+<% form_for @user do |u| %>
+  <%= u.label :email %>
+  <%= u.text_field :email %>
+
+  <%= u.label :password %>
+  <%= u.password_field :email %>
+
+  <%= u.submit %>
+<% end %>
