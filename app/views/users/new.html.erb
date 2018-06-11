@@ -1,5 +1,16 @@
 <h3>Sign up here to use Tillio</h3>
 <%= form_for @user do |u| %>
+  <% if @user.errors.any? %>
+    <div id="errors">
+      <h2><%= pluralize(@user.errors.count, "error") %> standing between you and your plants!</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <%= u.label :name %>
   <%= u.text_field :name %>
   <br><br>
