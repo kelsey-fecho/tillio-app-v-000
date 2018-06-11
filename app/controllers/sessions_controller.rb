@@ -4,32 +4,18 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(email: params[:user][:email])
-    return head(:forbidden) unless @user.authenticate(params[:password])
-    session[:user_id] = params[:user][:id]
-    redirect_to '/'
-  end
-
-  def facebook
-    @user = User.find_or_create_by(email: auth['email']) do |u|
-      u.name = auth['info']['name']
-      u.email = auth['info']['email']
-      u.image = auth['info']['image']
+    if (omni = request.env['omniauth.auth'])
+      @user = User.find_by(email: omni[:info][:email])
+    else
+      @user = User.find_by(emails: params[:users][:email])
+      return head(:forbidden) unless @user.authenticate(params[:password])
+      session[:user_id] = params[:user][:id]
     end
-
-    session[:user_id] = @user.id
-
-    render '/'
+    redirect_to '/'
   end
 
   def destroy
     session.delete :user_id
     redirect_to '/'
-  end
-
-  private
-
-  def auth
-    request.env['omniauth.auth']
   end
 end
