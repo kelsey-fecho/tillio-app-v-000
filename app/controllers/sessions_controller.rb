@@ -5,17 +5,24 @@ class SessionsController < ApplicationController
 
   def create
     if (omni = request.env['omniauth.auth'])
-      @user = User.find_by(email: omni[:info][:email])
+      verify(User.find_by(email: omni[:info][:email]), omni)
     else
-      @user = User.find_by(emails: params[:users][:email])
-      return head(:forbidden) unless @user.authenticate(params[:password])
-      session[:user_id] = params[:user][:id]
+      verify(User.find_by(email: params[:user][:email]), params)
     end
-    redirect_to '/'
   end
 
   def destroy
     session.delete :user_id
     redirect_to '/'
+  end
+
+  private
+
+  def verify(user, info)
+    if (flash[:error] = User.auth_error(user, info))
+      redirect_to login_path
+    else
+      login(user)
+    end
   end
 end

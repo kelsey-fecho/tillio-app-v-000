@@ -16,14 +16,18 @@
   </div>
 <% end %>
 
-<%= form_for @user do |u| %>
+<% if flash[:error] %>
+  <p class="error-display"><%= flash[:error] %></p>
+<% end %>
+
+<%= form_for :user do |u| %>
   <%= u.label :email %>
   <%= u.text_field :email %>
     <br><br>
   <%= u.label :password %>
   <%= u.password_field :password %>
     <br><br>
-  <%= u.submit %>
+  <%= u.submit 'Log In'%>
 <% end %>
 
-<%= link_to "Or sign in with Facebook", '/auth/facebook' %>
+<%= button_to "Or sign in with Google", '/auth/google_oauth2' %>

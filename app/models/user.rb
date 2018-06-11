@@ -8,14 +8,27 @@ class User < ActiveRecord::Base
   validates :password, presence: true
   validates :password, length: {minimum: 6}
 
-  def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.name = auth.info.name
-      user.oauth_token = auth.credentials.token
-      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
-      user.save!
+  def self.auth_error(user, info)
+    if info[:user]
+      local_auth_error(user, info)
+    else
+      omni_auth_error(user, info)
+    end
+  end
+
+  def self.omni_auth_error(user, info)
+    if !user
+      "Email does not match existing user"
+    end
+  end
+
+  def self.local_auth_error(user, info)
+    if info[:user][:email].blank? || info[:user][:password].blank?
+      "Fields can't be left blank"
+    elsif !user
+      "Email does not match existing user"
+    elsif !user.authenticate(info[:user][:password])
+      "Password is not correct"
     end
   end
 end
