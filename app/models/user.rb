@@ -4,6 +4,11 @@ class User < ActiveRecord::Base
   has_many :clippings
   has_many :plants, through: :clippings
 
+  validates :email, presence: true
+  validates :email, uniqueness: true
+  validates :password, presence: true
+  validates :password, length: {minimum: 6}
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
       user.provider = auth.provider

@@ -7,7 +7,7 @@ Specs:
 - [X] Include at least one has_many through relationship (User has_many Plants through Clippings, Plant has_many Users through Clippings)
 - [ ] The "through" part of the has_many through includes at least one user submittable attribute (attribute_name e.g. ingredients.quantity)
 - [ ] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
-- [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+- [X] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
 - [X] Include signup (Using Bcrypt and secure password validation)
 - [X] Include login (Using Bcrypt and secure password validation)
 - [X] Include logout (Using Bcrypt and secure password validation)
