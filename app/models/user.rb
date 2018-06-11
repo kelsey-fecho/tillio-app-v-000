@@ -5,7 +5,6 @@ class User < ActiveRecord::Base
   has_many :plants, through: :clippings
 
   validates :email, presence: true
-  validates :email, uniqueness: true
   validates :password, presence: true
   validates :password, length: {minimum: 6}
 
