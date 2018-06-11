@@ -1,5 +1,21 @@
 <!--want a link here to "Create a New User" -->
 <h4>Sign in</h4>
+
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h5>
+      <%= pluralize(@user.errors.count, "error") %>
+      are keeping you from your gardens:
+    </h5>
+
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for @user do |u| %>
   <%= u.label :email %>
   <%= u.text_field :email %>
