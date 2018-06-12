@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root 'plants#index'
-  resources :users, :plants
+  resources :users, only: [:show, :new, :create] do
+    resources :clippings, only: [:index, :create]
+  end
+
+  resources :plants
 
 
   get '/login' => 'sessions#new'
