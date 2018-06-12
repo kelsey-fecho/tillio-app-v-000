@@ -1,12 +1,12 @@
 <h1>ALL THE PLANTS!</h1>
 
 <% @plants.each do |p|%>
-  <div>
-    <h3><%= p.name %></h3>
+  <div='plant'>
+    <h3><%= link_to p.name, plant_path(p) %></h3>
   </div>
 <% end %>
 
-<div= "new-plant">
+<div="new-plant">
   <h3>Got something new to share? Add a plant below!</h3>
   <p>All fields are not required, but fill in as much as you know. The more robust, the better future gardeners can grow!</p>
   <%= form_for :plant, :url => plants_path do |p| %>
