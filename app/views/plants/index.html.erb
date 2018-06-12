@@ -6,4 +6,54 @@
   </div>
 <% end %>
 
+<div= "new-plant">
+  <h3>Got something new to share? Add a plant below!</h3>
+  <p>All fields are not required, but fill in as much as you know. The more robust, the better future gardeners can grow!</p>
+  <%= form_for :plant do |p| %>
+    <%= p.label :name%>
+    <%= p.text_field :name %>
+
+    <%= p.label :kind%>
+    <%= p.text_field :kind %>
+
+    <%= p.label :landscape_categories%>
+    <%= p.text_field :landscape_categories %>
+
+    <%= p.label :description%>
+    <%= p.text_area :description %>
+
+    <%= p.label :zone%>
+    <%= p.number_field :zone %>
+
+    <%= p.label :height%>
+    <%= p.text_field :height %>
+
+    <%= p.label :bloom_time%>
+    <%= p.text_field :bloom_time %>
+
+    <%= p.label :flower_color%>
+    <%= p.text_field :flower_color %>
+
+    <%= p.label :light%>
+    <%= p.text_field :light %>
+
+    <%= p.label :water%>
+    <%= p.text_field :water %>
+
+    <%= p.label :drainage%>
+    <%= p.text_field :drainage %>
+
+    <%= p.label :growth_rate%>
+    <%= p.text_field :growth_rate %>
+
+    <%= p.label :maintenance%>
+    <%= p.text_field :maintenance %>
+
+    <%= p.label :susceptibility%>
+    <%= p.text_field :susceptibility %>
+
+    <%= p.submit %>
+  <% end %>
+</div>
+
 <%= button_to "Log Out", logout_path %>
