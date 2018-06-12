@@ -15,5 +15,8 @@
 <p>Disease Susceptibility: <%= @p.susceptibility %></p>
 
 
-<%= button_to "Clip this one", ?? %>
+<%= form_for :clipping, :url => user_clippings_path(@user) do |c| %>
+  <%= c.hidden_field :plant_id, value: @p.id %>
+  <%= c.submit "Clip this one!"%>
+<% end %>
 <%= link_to "Back to All Plants", plants_path %>
