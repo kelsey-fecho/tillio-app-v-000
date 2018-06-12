@@ -9,7 +9,7 @@
 <div= "new-plant">
   <h3>Got something new to share? Add a plant below!</h3>
   <p>All fields are not required, but fill in as much as you know. The more robust, the better future gardeners can grow!</p>
-  <%= form_for :plant do |p| %>
+  <%= form_for :plant, :url => plants_path do |p| %>
     <%= p.label :name%>
     <%= p.text_field :name %>
     <br><br>
