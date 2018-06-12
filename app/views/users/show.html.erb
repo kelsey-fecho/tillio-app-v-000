@@ -1,0 +1,10 @@
+<h3>Hey, <%=@user.name %>!</h3>
+
+<h5>Your Clippings</h5>
+<ul>
+  <% @user.clippings.each do |c| %>
+    <li><%= c.plant.name %> - <%= c.rating %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Browse Plants", plants_path %>
