@@ -15,7 +15,7 @@ class PlantsController < ApplicationController
     @plant = Plant.create(plant_params)
     redirect_to plant_path(@plant)
   end
-
+  
   private
 
   def plant_params

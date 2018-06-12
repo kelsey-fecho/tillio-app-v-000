@@ -3,7 +3,7 @@
 <h5>Your Clippings</h5>
 <ul>
   <% @user.clippings.each do |c| %>
-    <li><%= c.plant.name %> - <%= c.rating %></li>
+    <li><%=link_to c.plant.name, plant_path(c.plant) %> - Your Rating: <%= c.rating %></li>
   <% end %>
 </ul>
 
