@@ -5,5 +5,6 @@ class ClippingsController < ApplicationController
   end
 
   def index
+    @clippings = User.find(params[:user_id]).clippings
   end
 end

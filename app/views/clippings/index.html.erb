@@ -1,0 +1,4 @@
+<h1>A User's Clippings</h1>
+<% @clippings.each do |c|%>
+  <%= Plant.find(c.plant_id).name %>
+<% end %>
