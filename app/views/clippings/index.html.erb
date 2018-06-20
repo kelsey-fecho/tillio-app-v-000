@@ -8,9 +8,8 @@
   <%if !c.rating && @user === @cuser%>
     <%= form_for c, :url => user_clipping_path(c.user_id, c.id) do |f| %>
       <%= f.label :rating %>
-      <%= f.number_field :rating, in: 1...10 %>
+      <%= f.number_field :rating, in: 1...11 %>
       <%= f.submit %>
-      <br><br>
     <% end %>
   <% else %>
     <p>Your Rating: <%= c.rating %></p>
@@ -23,7 +22,7 @@
     <p>Got room in your garden for a little more?</p>
     <p>Clip a new plant:</p>
     <%=form_for :clipping, :url => user_clippings_path, :action => "post" do |c|%>
-      <%= c.collection_select :plant_name, Plant.all, :id, :name %><br><br>
+      <%= c.collection_select :plant_id, Plant.all, :id, :name %><br><br>
       <%= c.submit "Add This Clipping"%>
     <% end %>
   </div>
