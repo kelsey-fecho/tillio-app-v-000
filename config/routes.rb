@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'plants#index'
   resources :users, only: [:show, :new, :create] do
-    resources :clippings, only: [:index, :create]
+    resources :clippings, only: [:index, :create, :show]
   end
 
   resources :plants

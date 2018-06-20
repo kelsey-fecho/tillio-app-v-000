@@ -5,5 +5,14 @@ class ClippingsController < ApplicationController
   end
 
   def index
+    if params[:user_id]
+      @clippings = User.find(params[:user_id]).clippings
+    else
+      @clippings = Clipping.all
+    end
+  end
+
+  def show
+    @clipping = Clipping.find(params[:id])
   end
 end
