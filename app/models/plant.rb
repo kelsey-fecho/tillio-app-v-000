@@ -3,6 +3,7 @@ class Plant < ActiveRecord::Base
   has_many :users, through: :clippings
 
   validates :name, presence: true
+  validates :kind, presence: true
 
   def self.perennials
     self.where(kind: "Perennial")

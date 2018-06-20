@@ -1,6 +1,6 @@
 class PlantsController < ApplicationController
   before_action :require_login
-  
+
   def index
     if !logged_in?
       redirect_to '/login'
@@ -16,6 +16,16 @@ class PlantsController < ApplicationController
   def create
     @plant = Plant.create(plant_params)
     redirect_to plant_path(@plant)
+  end
+
+  def trees
+    @plants = Plant.trees
+    render 'plants/index'
+  end
+
+  def perennials
+    @plants = Plant.perennials
+    render 'plants/index'
   end
 
   private
