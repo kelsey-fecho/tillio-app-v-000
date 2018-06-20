@@ -10,6 +10,7 @@
       <%= f.label :rating %>
       <%= f.number_field :rating %>
       <%= f.submit %>
+      <br><br>
     <% end %>
   <% else %>
     <p>Your Rating: <%= c.rating %></p>
@@ -21,7 +22,7 @@
   <div = "new-clipping">
     <p>Got room in your garden for a little more?</p>
     <p>Clip a new plant:</p>
-    <%=form_for :clipping, :url => user_clippings_path do |c|%>
+    <%=form_for :clipping, :url => user_clippings_path, :action => "post" do |c|%>
       <%= c.collection_select :plant_name, Plant.all, :id, :name %><br><br>
       <%= c.submit "Add This Clipping"%>
     <% end %>

@@ -2,7 +2,8 @@ class ClippingsController < ApplicationController
   before_action :require_login
 
   def create
-    Clipping.find_or_create_by(user_id: params[:user_id], plant_id: params[:clipping][:plant_id])
+    plant = Plant.find(params[:clipping][:plant_name])
+    Clipping.find_or_create_by(user_id: params[:user_id], plant_id: plant.id)
     redirect_to user_clippings_path(current_user)
   end
 
