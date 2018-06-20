@@ -1,21 +1,6 @@
 <!--want a link here to "Create a New User" -->
 <h4>Sign in</h4>
 
-<% if @user.errors.any? %>
-  <div id="error_explanation">
-    <h5>
-      <%= pluralize(@user.errors.count, "error") %>
-      are keeping you from your gardens:
-    </h5>
-
-    <ul>
-    <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-
 <% if flash[:error] %>
   <p class="error-display"><%= flash[:error] %></p>
 <% end %>
@@ -31,3 +16,7 @@
 <% end %>
 
 <%= button_to "Or sign in with Google", '/auth/google_oauth2' %>
+
+<br><br>
+
+<%= link_to "New Here?", new_user_path %>
