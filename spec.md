@@ -13,7 +13,7 @@ Specs:
 - [X] Include logout (Using Bcrypt and secure password validation)
 - [X] Include third party signup/login (OmniAuth with Google)
 - [X] Include nested resource show or index (URL e.g. users/2/clippings)
-- [ ] Include nested resource "new" form (URL e.g. clippings/1/rating)
+- [X] Include nested resource "new" form (new clippings can be added at users/:id/clippings, and can also be updated from the same page)
 - [X] Include form display of validation errors
 
 Confirm:

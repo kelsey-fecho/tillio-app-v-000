@@ -1,4 +1,8 @@
 <h1><%= @user.name %>'s Clippings</h1>
+
+<%= link_to "Browse Plants", plants_path %><br><br>
+<hr>
+
 <% @clippings.each do |c|%>
   <%= link_to Plant.find(c.plant_id).name, plant_path(c.plant) %>
   <%if !c.rating && @user === @cuser%>
@@ -12,7 +16,7 @@
     <br>
   <% end %>
 <% end %>
-
+<hr>
 <% if @user === @cuser %>
   <div = "new-clipping">
     <p>Got room in your garden for a little more?</p>

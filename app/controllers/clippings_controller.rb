@@ -3,7 +3,7 @@ class ClippingsController < ApplicationController
 
   def create
     Clipping.find_or_create_by(user_id: params[:user_id], plant_id: params[:clipping][:plant_id])
-    redirect_to user_path(current_user)
+    redirect_to user_clippings_path(current_user)
   end
 
   def index
@@ -23,7 +23,7 @@ class ClippingsController < ApplicationController
   def update
     @clipping = Clipping.find(params[:id])
     @clipping.update(rating: params[:clipping][:rating])
-    redirect_to user_path(current_user)
+    redirect_to user_clippings_path(current_user)
   end
 
   private
