@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   root 'plants#index'
+
+  get '/plants/trees' => 'plants#trees'
+  get '/plants/perennials' => 'plants#perennials'
+
   resources :users, only: [:show, :new, :create] do
     resources :clippings
   end
 
   resources :plants
-
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

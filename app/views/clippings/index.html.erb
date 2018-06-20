@@ -8,7 +8,7 @@
   <%if !c.rating && @user === @cuser%>
     <%= form_for c, :url => user_clipping_path(c.user_id, c.id) do |f| %>
       <%= f.label :rating %>
-      <%= f.number_field :rating %>
+      <%= f.number_field :rating, in: 1...10 %>
       <%= f.submit %>
       <br><br>
     <% end %>

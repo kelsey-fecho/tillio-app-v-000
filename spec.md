@@ -7,7 +7,7 @@ Specs:
 - [X] Include at least one has_many through relationship (User has_many Plants through Clippings, Plant has_many Users through Clippings)
 - [X] The "through" part of the has_many through includes at least one user submittable attribute (Clipping.rating)
 - [X] Include reasonable validations for simple model objects (Users, Plants, Clippings)
-- [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+- [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.trees URL: /plants/trees)
 - [X] Include signup (Using Bcrypt and secure password validation)
 - [X] Include login (Using Bcrypt and secure password validation)
 - [X] Include logout (Using Bcrypt and secure password validation)
@@ -17,7 +17,7 @@ Specs:
 - [X] Include form display of validation errors
 
 Confirm:
-- [ ] The application is pretty DRY
-- [ ] Limited logic in controllers
-- [ ] Views use helper methods if appropriate
-- [ ] Views use partials if appropriate
+- [X] The application is pretty DRY
+- [X] Limited logic in controllers
+- [X] Views use helper methods if appropriate
+- [X] Views use partials if appropriate
