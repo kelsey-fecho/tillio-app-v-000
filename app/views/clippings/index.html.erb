@@ -1,3 +1,13 @@
+<h1>A User's Clippings</h1>
+<% @clippings.each do |c|%>
+  <%= Plant.find(c.plant_id).name %>
+    <%if c.rating.empty? %>
+      <%= DISPLAY NEW RATING FORM %>
+    <% else %>
+      <%= c.rating %>
+    <% end %>
+  <% end %>
+
 
 <% if @user === current_user %>
   <div = "new-clipping">
