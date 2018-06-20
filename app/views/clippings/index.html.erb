@@ -1,0 +1,8 @@
+<div = "new-clipping">
+  <p>Got room in your garden for a little more?</p>
+  <p>Add a new clipping below:</p>
+  <%=form_for :clipping, :url => user_clippings_path do |c|%>
+    <%= c.collection_select :plant_name, Plant.all, :id, :name %>
+    <%= c.submit %>
+  <% end %>
+</div>

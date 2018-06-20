@@ -1,4 +1,14 @@
 class ClippingsController < ApplicationController
+  before_action :require_login
+
+  def new
+    user = User.find(params[:user_id])
+    if current_user === user
+      @clipping = Clipping.new(user_id: params[:user_id])
+    else
+    end
+  end
+
   def create
     Clipping.find_or_create_by(user_id: params[:user_id], plant_id: params[:clipping][:plant_id])
     redirect_to user_path(current_user)
@@ -14,5 +24,11 @@ class ClippingsController < ApplicationController
 
   def show
     @clipping = Clipping.find(params[:id])
+  end
+
+  private
+
+  def clipping_params
+    params.require(:clipping).permit(:user_id, :plant_id, :rating)
   end
 end
