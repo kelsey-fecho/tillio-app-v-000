@@ -7,6 +7,7 @@ class ClippingsController < ApplicationController
   end
 
   def index
+    @cuser = current_user
     if params[:user_id]
       @user = User.find(params[:user_id])
       @clippings = User.find(params[:user_id]).clippings

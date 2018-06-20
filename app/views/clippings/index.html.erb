@@ -1,15 +1,19 @@
 <h1><%= @user.name %>'s Clippings</h1>
 <% @clippings.each do |c|%>
   <%= Plant.find(c.plant_id).name %>
-  <%if c.rating.empty? && if @user === current_user%>
-    <%= DISPLAY NEW RATING FORM %>
+  <%if !c.rating && if @user === @cuser%>
+    <%= form_for c, :url => clipping_path(c) do |f| %>
+      <%= f.label :rating %>
+      <%= f.number_field :rating %>
+      <%= f.submit %>
+    <% end %>
   <% else %>
     <%= c.rating %>
   <% end %>
 <% end %>
+<% end %>
 
-
-<% if @user === current_user %>
+<% if @user === @cuser %>
   <div = "new-clipping">
     <p>Got room in your garden for a little more?</p>
     <p>Clip a new plant:</p>
