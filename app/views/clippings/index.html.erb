@@ -1,16 +1,16 @@
 <h1><%= @user.name %>'s Clippings</h1>
 <% @clippings.each do |c|%>
-  <%= Plant.find(c.plant_id).name %>
-  <%if !c.rating && if @user === @cuser%>
-    <%= form_for c, :url => clipping_path(c) do |f| %>
+  <%= link_to Plant.find(c.plant_id).name, plant_path(c.plant) %>
+  <%if !c.rating && @user === @cuser%>
+    <%= form_for c, :url => user_clipping_path(c.user_id, c.id) do |f| %>
       <%= f.label :rating %>
       <%= f.number_field :rating %>
       <%= f.submit %>
     <% end %>
   <% else %>
-    <%= c.rating %>
+    <p>Your Rating: <%= c.rating %></p>
+    <br>
   <% end %>
-<% end %>
 <% end %>
 
 <% if @user === @cuser %>

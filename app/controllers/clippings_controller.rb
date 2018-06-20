@@ -20,9 +20,15 @@ class ClippingsController < ApplicationController
     @clipping = Clipping.find(params[:id])
   end
 
+  def update
+    @clipping = Clipping.find(params[:id])
+    @clipping.update(rating: params[:clipping][:rating])
+    redirect_to user_path(current_user)
+  end
+
   private
 
   def clipping_params
-    params.require(:clipping).permit(:user_id, :plant_id, :rating)
+    params.require(:clipping).permit(:id, :user_id, :plant_id, :rating)
   end
 end
