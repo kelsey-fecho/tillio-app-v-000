@@ -12,9 +12,9 @@ Specs:
 - [X] Include login (Using Bcrypt and secure password validation)
 - [X] Include logout (Using Bcrypt and secure password validation)
 - [X] Include third party signup/login (OmniAuth with Google)
-- [ ] Include nested resource show or index (URL e.g. users/2/recipes)
-- [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients)
-- [X] Include form display of validation errors (form URL e.g. /recipes/new)
+- [X] Include nested resource show or index (URL e.g. users/2/clippings)
+- [ ] Include nested resource "new" form (URL e.g. clippings/1/rating)
+- [X] Include form display of validation errors
 
 Confirm:
 - [ ] The application is pretty DRY

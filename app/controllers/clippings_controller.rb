@@ -2,11 +2,8 @@ class ClippingsController < ApplicationController
   before_action :require_login
 
   def new
-    user = User.find(params[:user_id])
-    if current_user === user
-      @clipping = Clipping.new(user_id: params[:user_id])
-    else
-    end
+    @user = User.find(params[:user_id])
+    @clipping = Clipping.new(user_id: params[:user_id])
   end
 
   def create
