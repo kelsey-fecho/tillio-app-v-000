@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'plants#index'
+  root 'gardens#index'
 
   get '/plants/trees' => 'plants#trees'
   get '/plants/perennials' => 'plants#perennials'
