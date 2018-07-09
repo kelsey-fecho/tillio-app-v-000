@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   get '/plants/perennials' => 'plants#perennials'
 
   resources :users, only: [:show, :new, :create] do
-    resources :clippings
+    resources :gardens
   end
 
-  resources :gardens, only: [:index]
+  resources :gardens do
+    resources :clippings
+  end
 
   resources :plants
 
