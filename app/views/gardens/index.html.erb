@@ -5,8 +5,9 @@
   </li>
 <% end %>
 </ul>
-
-<%= form_for(Garden.new) do |g|%>
+<hr>
+<h2>Make a New Garden</h2>
+<%= form_for(@garden, :url => user_gardens_path(@current_user)) do |g|%>
   <%= g.text_field :name %><br>
   <%= g.submit %>
 <% end %>
