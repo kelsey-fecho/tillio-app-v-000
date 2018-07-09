@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     if @user.valid?
       @user.save
       login(@user)
-      redirect_to '/plants'
+      redirect_to root_path
     else
       render :new
     end
