@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :clippings
   end
 
+  resources :gardens, only: [:index]
+
   resources :plants
 
   get '/login' => 'sessions#new'

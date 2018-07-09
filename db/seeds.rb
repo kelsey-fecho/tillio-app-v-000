@@ -41,3 +41,10 @@ Plant.create(name: "Rosemary", kind: "Perennial", zone: 7, height: "2-5 feet",
               drainage: "Well Drained", growth_rate: "Slow", water: "Low", maintenance: "Low",
               description: "Rosemary takes on different forms depending on where it is grown. As a stand alone plant it is shrublike, if located in a planter or other raised planting it drapes over the edge.",
               landscape_categories: "Herbs");
+
+
+Garden.create(name: "Garden 1", user_id: 3);
+
+Garden.create(name: "Sunny Garden", user_id: 2);
+
+Garden.create(name: "Shady Garden", user_id: 2);
