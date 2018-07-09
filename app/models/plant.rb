@@ -1,6 +1,6 @@
 class Plant < ActiveRecord::Base
   has_many :clippings
-  has_many :users, through: :clippings
+  has_many :gardens, through: :clippings
 
   validates :name, presence: true
   validates :kind, presence: true

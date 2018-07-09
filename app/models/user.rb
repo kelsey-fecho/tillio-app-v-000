@@ -2,8 +2,7 @@ class User < ActiveRecord::Base
   has_secure_password
 
   has_many :gardens
-  has_many :clippings
-  has_many :plants, through: :clippings
+  has_many :clippings, through: :gardens
 
   validates :email, presence: true
   validates :password, presence: true
