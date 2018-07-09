@@ -1,7 +1,12 @@
-<ul>
+<ul id="gardensList">
 <% @gardens.each do |garden|%>
   <li>
     <%= garden.name %>
   </li>
 <% end %>
 </ul>
+<%= @current_user.id%>
+<%= form_for(Garden.new) do |g|%>
+  <%= g.text_field :name %><br>
+  <%= g.submit %>
+<% end %>
