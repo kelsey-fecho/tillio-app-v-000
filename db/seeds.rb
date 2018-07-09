@@ -43,8 +43,6 @@ Plant.create(name: "Rosemary", kind: "Perennial", zone: 7, height: "2-5 feet",
               landscape_categories: "Herbs");
 
 
-Garden.create(name: "Garden 1", user_id: 3);
+Garden.create(name: "Sunny Garden", user_id: 1);
 
-Garden.create(name: "Sunny Garden", user_id: 2);
-
-Garden.create(name: "Shady Garden", user_id: 2);
+Garden.create(name: "Shady Garden", user_id: 1);
