@@ -11,9 +11,14 @@
   <%= g.label :name%>
   <%= g.text_field :name %><br>
 
-  <%= g.fields_for :clippings do |c| %>
-    <%= c.collection_select :plant_id, Plant.all, :id, :name %><br><br>
+  <ul>
+  <%= g.fields_for :clippings do |clipping| %>
+    Add a clipping:
+    <li>
+      <%= clipping.collection_select :plant_id, Plant.all, :id, :name %><br>
+    </li>
   <% end %>
-  <!--Add Nested form here for clippings, use ajax to create additional clipping fields when necessary -->
+  </ul>
+
   <%= g.submit %>
 <% end %>
