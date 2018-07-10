@@ -11,4 +11,10 @@ class GardensController < ApplicationController
 
   def create
   end
+
+  private
+
+  def garden_params
+    params.require(:garden).permit(:name, :user_id, clipping_attributes: [:plant_id, :garden_id, :rating])
+  end
 end

@@ -8,6 +8,12 @@
 <hr>
 <h2>Make a New Garden</h2>
 <%= form_for(@garden, :url => user_gardens_path(@current_user)) do |g|%>
+  <%= g.label :name%>
   <%= g.text_field :name %><br>
+
+  <%= g.fields_for :clippings do |c| %>
+    <%= c.collection_select :plant_id, Plant.all, :id, :name %><br><br>
+  <% end %>
+  <!--Add Nested form here for clippings, use ajax to create additional clipping fields when necessary -->
   <%= g.submit %>
 <% end %>
