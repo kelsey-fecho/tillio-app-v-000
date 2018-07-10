@@ -3,17 +3,16 @@ class ClippingsController < ApplicationController
 
   def create
     plant = Plant.find(params[:clipping][:plant_id])
-    garden = Garden.find(params[:clipping][:garden_id])
+    garden = Garden.find(params[:garden_id])
     Clipping.find_or_create_by(garden_id: garden.id, plant_id: plant.id)
     redirect_to garden_clippings_path(garden)
   end
 
   def index
     @cuser = current_user
-      @garden = Garden.find(params[:garden_id])
-      @user = User.find(@garden.user_id)
-      @clippings = Garden.find(params[:garden_id]).clippings
-    end
+    @garden = Garden.find(params[:garden_id])
+    @user = User.find(@garden.user_id)
+    @clippings = Garden.find(params[:garden_id]).clippings
   end
 
   def show

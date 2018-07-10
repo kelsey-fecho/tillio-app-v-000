@@ -1,4 +1,5 @@
 class GardensController < ApplicationController
+  before_action :require_login, except: [:index]
 
   def index
     if !logged_in?
@@ -10,6 +11,9 @@ class GardensController < ApplicationController
   end
 
   def create
+    garden = Garden.new(garden_params)
+    garden.save
+    redirect_to gardens_path
   end
 
   private
