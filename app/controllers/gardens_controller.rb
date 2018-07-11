@@ -7,7 +7,7 @@ class GardensController < ApplicationController
     end
     @plants = Plant.all
     @gardens = Garden.all
-    @garden = current_user.gardens.build
+    @garden = Garden.new
   end
 
   def create
