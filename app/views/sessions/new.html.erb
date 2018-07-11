@@ -1,5 +1,5 @@
-<!--want a link here to "Create a New User" -->
-<h4>Sign in</h4>
+<div id="access">
+<h3>Sign in</h3>
 
 <% if flash[:error] %>
   <p class="error-display"><%= flash[:error] %></p>
@@ -14,9 +14,8 @@
     <br><br>
   <%= u.submit 'Log In'%>
 <% end %>
-
+<br>
 <%= button_to "Or sign in with Google", '/auth/google_oauth2' %>
-
-<br><br>
-
+<br>
 <%= link_to "New Here?", new_user_path, :id => "signup" %>
+</div>
