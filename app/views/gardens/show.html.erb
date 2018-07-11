@@ -1,0 +1,10 @@
+<h1><%= @garden.name %></h1>
+
+<h3>Clippings: </h3>
+<ul>
+  <% @garden.clippings.each do |c| %>
+    <li>
+      <%= c.plant.name%> - Rating: <%- c.rating %>
+    </li>
+  <% end %>
+</ul>

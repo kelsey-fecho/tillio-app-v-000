@@ -7,13 +7,17 @@ class GardensController < ApplicationController
     end
     @plants = Plant.all
     @gardens = Garden.all
-    @garden = Garden.new
+    @garden = current_user.gardens.build
   end
 
   def create
     garden = Garden.new(garden_params)
     garden.save
     redirect_to gardens_path
+  end
+
+  def show
+    @garden = Garden.find(params[:id])
   end
 
   private
