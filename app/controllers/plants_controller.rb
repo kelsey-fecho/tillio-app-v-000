@@ -11,6 +11,7 @@ class PlantsController < ApplicationController
   def show
     @p = Plant.find(params[:id])
     @user_gardens = current_user.gardens
+    render json: @p.to_json, status: 201
   end
 
   def create

@@ -4,7 +4,13 @@
 <ul>
   <% @garden.clippings.each do |c| %>
     <li>
-      <%= c.plant.name%> - Rating: <%- c.rating %>
+      <%= c.plant.name%> - Rating: <%- c.rating %> - <%= link_to "Learn More", plant_path(c.plant), :class => "plant-details"%>
+      <div class='plant-info'>
+        <h4 id="plantKind-<%=c.plant.id%>"></h4>
+        <p id="plantLight-<%=c.plant.id%>"></p>
+        <p id="plantWater-<%=c.plant.id%>"></p>
+        <p id="plantZone-<%=c.plant.id%>"></p>
+      </div>
     </li>
   <% end %>
 </ul>
