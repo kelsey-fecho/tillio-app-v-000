@@ -10,7 +10,7 @@ class PlantsController < ApplicationController
 
   def show
     @p = Plant.find(params[:id])
-    @user = current_user
+    @user_gardens = current_user.gardens
   end
 
   def create

@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   resources :plants
 
+  post '/clippings' => 'clippings#create'
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'

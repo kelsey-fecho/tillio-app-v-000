@@ -14,9 +14,14 @@
 <p>Maintenance: <%= @p.maintenance %></p>
 <p>Disease Susceptibility: <%= @p.susceptibility %></p>
 
-
-<%= form_for :clipping, :url => user_clippings_path(@user) do |c| %>
+<hr>
+<%= form_for :clipping, :url => clippings_path do |c| %>
+  <h2>Fallen for this plant?</h2>
   <%= c.hidden_field :plant_id, value: @p.id %>
+  Pick a Garden to Add It To!<br>
+  <%= c.collection_select :garden_id, @user_gardens, :id, :name %><br>
   <%= c.submit "Clip this one!"%>
 <% end %>
+<br><br>
+<hr>
 <%= link_to "Back to All Plants", plants_path %>
