@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/plants/trees' => 'plants#trees'
   get '/plants/perennials' => 'plants#perennials'
 
-  resources :users, only: [:show, :new, :create] do
+  resources :users, only: [:show] do
     resources :gardens
   end
 
@@ -20,8 +20,8 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
 
-  get '/signup' => 'users#new'
-  post '/signup' => 'users#create'
+  get '/signup' => 'users#new', as: "new_user"
+  post '/signup' => 'users#create', as: "users"
 
   get '/auth/google_oauth2/callback' => 'sessions#create'
 
