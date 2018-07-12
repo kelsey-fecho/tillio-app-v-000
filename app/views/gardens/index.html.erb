@@ -7,13 +7,13 @@
 </ul>
 <hr>
 <h2>Make a New Garden</h2>
-<%= form_for(@garden, :url => user_gardens_path(@current_user)) do |g|%>
+<%= form_for([@current_user, @garden]) do |g|%>
   <%= g.label :name%>
   <%= g.text_field :name %><br>
   <%= g.hidden_field :user_id, value: @current_user.id %>
 
   <ul>
-    <%= g.fields_for :clippings do |clipping| %>
+    <%= g.fields_for :clippings, @garden.clippings.build do |clipping| %>
       Add a clipping:
       <li>
         <%= clipping.collection_select :plant_id, Plant.all, :id, :name %><br>

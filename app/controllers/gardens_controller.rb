@@ -12,9 +12,15 @@ class GardensController < ApplicationController
   end
 
   def create
-    garden = Garden.new(garden_params)
-    garden.save
-    redirect_to gardens_path
+    @garden = current_user.gardens.build(garden_params)
+    if @garden.save
+      respond_to do |format|
+        format.html {redirect_to @garden}
+        format.json {}
+      end
+    else
+      render 'gardens/index'
+    end
   end
 
   def show
