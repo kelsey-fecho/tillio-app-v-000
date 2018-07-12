@@ -9,7 +9,8 @@ Specs:
 - [ ] Include at least one has_many relationship in information rendered via JSON and appended to the DOM.
 - [ ] Use your Rails API and a form to create a resource and render the response without a page refresh.
       Completed: New Garden Resource, New Clipping Resource
-- [ ] Translate JSON responses into js model objects.
+- [X] Translate JSON responses into js model objects.
+      Plants Details on Garden show page
 - [ ] At least one of the js model objects must have at least one method added by your code to the prototype.
 
 Confirm
