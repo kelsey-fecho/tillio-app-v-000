@@ -14,10 +14,7 @@ class GardensController < ApplicationController
   def create
     @garden = current_user.gardens.build(garden_params)
     if @garden.save
-      respond_to do |format|
-        format.html {redirect_to @garden}
-        format.json {}
-      end
+      render 'gardens/jsonshow', :layout => false
     else
       render 'gardens/index'
     end
@@ -30,6 +27,6 @@ class GardensController < ApplicationController
   private
 
   def garden_params
-    params.require(:garden).permit(:name, :user_id, clipping_attributes: [:plant_id, :garden_id, :rating])
+    params.require(:garden).permit(:name, :user_id, :clipping_attributes => {:garden_id =>[:plant_id, :rating]})
   end
 end

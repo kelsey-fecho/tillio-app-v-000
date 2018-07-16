@@ -12,14 +12,10 @@
   <%= g.text_field :name %><br>
   <%= g.hidden_field :user_id, value: @current_user.id %>
 
-  <ul>
     <%= g.fields_for :clippings, @garden.clippings.build do |clipping| %>
       Add a clipping:
-      <li>
         <%= clipping.collection_select :plant_id, Plant.all, :id, :name %><br>
-      </li>
     <% end %>
-  </ul>
 
   <%= g.submit "Start a Garden", id: "new_garden_submit"%>
 <% end %>
