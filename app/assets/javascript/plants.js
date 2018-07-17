@@ -10,14 +10,3 @@ $(function(){
     e.preventDefault();
   })
 })
-
-/*
-t.string "bloom_time"
-t.string "flower_color"
-t.string "drainage"
-t.string "growth_rate"
-t.string "maintenance"
-t.string "susceptibility"
-t.string "description"
-t.string "landscape_categories"
-*/
