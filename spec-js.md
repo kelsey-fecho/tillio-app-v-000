@@ -4,8 +4,8 @@ Specs:
 - [x] Use jQuery for implementing new requirements
 - [ ] Include a show resource rendered using jQuery and an Active Model Serialization JSON backend.
       Completed: Plant Show scroll
-- [ ] Include an index resource rendered using jQuery and an Active Model Serialization JSON backend.
-      Completed: Index Gardens
+- [X] Include an index resource rendered using jQuery and an Active Model Serialization JSON backend.
+      Completed: Gardens show page has clippings index
 - [ ] Include at least one has_many relationship in information rendered via JSON and appended to the DOM.
       On Plant show page, click "See In Action" to see Gardens where that plant is used
 - [X] Use your Rails API and a form to create a resource and render the response without a page refresh.
