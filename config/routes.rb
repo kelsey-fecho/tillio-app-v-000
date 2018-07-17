@@ -8,9 +8,7 @@ Rails.application.routes.draw do
     resources :gardens
   end
 
-  resources :gardens do
-    resources :clippings
-  end
+  resources :gardens
 
   resources :plants
 
