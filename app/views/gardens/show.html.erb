@@ -1,7 +1,8 @@
 <h1><%= @garden.name %></h1>
 
+<!-- Add a rating AJAX form -->
 <h2>Clippings: </h2>
-<ul>
+<ul id="gardenClippings">
   <% @garden.clippings.each do |c| %>
     <li>
       <h3><%= c.plant.name%> - Rating: <%- c.rating %> - <%= link_to "Learn More", plant_path(c.plant), :class => "plant-details"%></h3>
@@ -15,3 +16,12 @@
     </li>
   <% end %>
 </ul>
+
+
+<!-- Add a new AJAX Form to add clippings to garden -->
+<hr>
+<h3>Got room in your garden for a little more?</h3>
+<%=form_for :clipping, :url => garden_clippings_path(@garden), :action => "post" do |c|%>
+  <%= c.collection_select :plant_id, Plant.all, :id, :name %><br><br>
+  <%= c.submit "Add"%>
+<% end %>
