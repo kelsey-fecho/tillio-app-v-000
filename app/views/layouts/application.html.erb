@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="nav">
-    <%= image_tag "Tillio.jpg" %><br>
+    <a href="http://localhost:3000/"><%= image_tag "Tillio.jpg" %></a><br>
     <% if @current_user %>
     <%= link_to "All Plants", plants_path %> <%= link_to "Trees", plants_trees_path %> <%= link_to "Perennials", plants_perennials_path %>
     <%= button_to "Log Out", logout_path %>
