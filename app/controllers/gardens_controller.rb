@@ -22,6 +22,8 @@ class GardensController < ApplicationController
 
   def show
     @garden = Garden.find(params[:id])
+    @user = User.find(@garden.user_id)
+    @cuser = current_user
   end
 
   private

@@ -26,7 +26,7 @@ class ClippingsController < ApplicationController
   def update
     @clipping = Clipping.find(params[:id])
     @clipping.update(rating: params[:clipping][:rating])
-    redirect_to garden_clippings_path(@clipping.garden)
+    redirect_to garden_path(@clipping.garden)
   end
 
   private

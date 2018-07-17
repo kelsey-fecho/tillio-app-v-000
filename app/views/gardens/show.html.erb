@@ -5,7 +5,17 @@
 <ul id="gardenClippings">
   <% @garden.clippings.each do |c| %>
     <li>
-      <h3><%= c.plant.name%> - Rating: <%- c.rating %> - <%= link_to "Learn More", plant_path(c.plant), :class => "plant-details"%></h3>
+      <h3><%= c.plant.name%> - <%= link_to "Learn More", plant_path(c.plant), :class => "plant-details"%></h3>
+      <%if !c.rating && @user === @cuser%>
+        <%= form_for c, :url => garden_clipping_path(c.garden_id, c.id) do |f| %>
+            <%= f.label :rating %>
+            <%= f.number_field :rating, in: 1...11 %>
+            <%= f.submit %>
+          <% end %>
+        <% else %>
+          <p>Rating: <%= c.rating %></p>
+          <br>
+        <% end %>
       <div class='plant-info'>
         <h4 id="plantKind-<%=c.plant.id%>"></h4>
         <p id="plantLight-<%=c.plant.id%>"></p>
