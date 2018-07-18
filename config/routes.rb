@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :gardens do
     resources :clippings, only: [:update]
   end
-
+  get '/plants/kinds/:kind' => "plants#findKinds", as: 'plant_kinds'
   resources :plants
 
   post '/clippings' => 'clippings#create'
