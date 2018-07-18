@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_action :kinds
 
   def logged_in?
     session.include?(:user_id)
@@ -16,5 +17,9 @@ class ApplicationController < ActionController::Base
   def login(user)
     session[:user_id] = user.id
     redirect_to root_path
+  end
+
+  def kinds
+    @kinds = Plant.kinds
   end
 end
