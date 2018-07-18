@@ -5,7 +5,7 @@ Specs:
 - [X] Include a show resource rendered using jQuery and an Active Model Serialization JSON backend.
       Completed: Gardens page renders the plant show info on click event
 - [X] Include an index resource rendered using jQuery and an Active Model Serialization JSON backend.
-      Completed: Gardens show page has clippings index w/ user-submittable ratings form
+      Completed: Plant show page lists index of relevant gardens
 - [X] Include at least one has_many relationship in information rendered via JSON and appended to the DOM.
       Completed: On Plant show page, click "See In Action" to see Gardens where that plant is used
 - [X] Use your Rails API and a form to create a resource and render the response without a page refresh.
