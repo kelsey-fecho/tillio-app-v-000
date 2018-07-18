@@ -1,3 +1,3 @@
 class PlantSerializer < ActiveModel::Serializer
-  attributes :id, :kind, :light, :water, :zone, :landscape_categories
+  attributes :id, :kind, :light, :water, :zone, :landscape_categories, :description
 end
