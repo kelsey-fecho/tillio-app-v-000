@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_29_132720) do
+ActiveRecord::Schema.define(version: 2018_07_18_222707) do
 
   create_table "clippings", force: :cascade do |t|
     t.integer "garden_id"
@@ -31,15 +31,8 @@ ActiveRecord::Schema.define(version: 2018_06_29_132720) do
     t.string "name"
     t.string "kind"
     t.integer "zone"
-    t.string "height"
-    t.string "bloom_time"
-    t.string "flower_color"
     t.string "light"
-    t.string "drainage"
-    t.string "growth_rate"
     t.string "water"
-    t.string "maintenance"
-    t.string "susceptibility"
     t.string "description"
     t.string "landscape_categories"
     t.datetime "created_at", null: false
