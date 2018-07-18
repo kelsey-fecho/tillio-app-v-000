@@ -25,4 +25,5 @@ Rails.application.routes.draw do
 
   get '/auth/google_oauth2/callback' => 'sessions#create'
 
+  get '/plants/:id/gardens' => 'gardens#show_specific', as: 'plant_gardens'
 end
