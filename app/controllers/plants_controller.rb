@@ -8,6 +8,11 @@ class PlantsController < ApplicationController
     @plants = Plant.all
   end
 
+  def kind
+    binding.pry
+    @plants = Plant.where(kind: params[:kind])
+  end
+
   def show
     @p = Plant.find(params[:id])
     @user_gardens = current_user.gardens
@@ -17,19 +22,13 @@ class PlantsController < ApplicationController
     end
   end
 
+  def new
+    render :layout => false
+  end
+
   def create
     @plant = Plant.create(plant_params)
     redirect_to plant_path(@plant)
-  end
-
-  def trees
-    @plants = Plant.trees
-    render 'plants/index'
-  end
-
-  def perennials
-    @plants = Plant.perennials
-    render 'plants/index'
   end
 
   private

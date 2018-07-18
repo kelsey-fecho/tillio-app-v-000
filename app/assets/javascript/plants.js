@@ -4,12 +4,6 @@ $(function(){
       let plantInfo = new Plant(data.kind, data.description, data.light, data.water, data.zone, data.landscape_categories)
       let formatted = plantInfo.formatPlant();
       $('#plant-info-' + data.id).html(formatted)
-      // $("#plantKind-"+data["id"]).text("Kind: " + data["kind"])
-      // $("#plantDescription-"+data["id"]).text("Description: " + data["description"])
-      // $("#plantLight-"+data["id"]).text("Light: " + data["light"])
-      // $("#plantWater-"+data["id"]).text("Water: " + data["water"])
-      // $("#plantZone-"+data["id"]).text("Zone: " + data["zone"])
-      // $("#plantCategories-"+data["id"]).text("Landscape Categories: " + data["landscape_categories"])
     })
     e.preventDefault();
   })
@@ -32,4 +26,11 @@ $(function(){
     html += `I'm especially good for ${this.categories}`
     return html
   }
+
+  $("a#new_plant").on("click", function(e){
+    $.get(this.href).success(function(response){
+      $("div#addNew").html(response)
+    })
+    e.preventDefault();
+  })
 })

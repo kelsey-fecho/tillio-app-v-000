@@ -1,0 +1,25 @@
+<p>All fields are not required, but fill in as much as you know. The more robust, the better future gardeners can grow!</p>
+<%= form_for :plant, :url => plants_path do |p| %>
+  <%= p.label :name%>
+  <%= p.text_field :name %>
+  <br><br>
+  <%= p.label :kind%>
+  <%= p.text_field :kind %>
+  <br><br>
+  <%= p.label :landscape_categories%>
+  <%= p.text_field :landscape_categories %>
+  <br><br>
+  <%= p.label :description%>
+  <%= p.text_area :description %>
+  <br><br>
+  <%= p.label :zone%>
+  <%= p.number_field :zone %>
+  <br><br>
+  <%= p.label :light%>
+  <%= p.text_field :light %>
+  <br><br>
+  <%= p.label :water%>
+  <%= p.text_field :water %>
+  <br><br><br>
+  <%= p.submit %>
+<% end %>
