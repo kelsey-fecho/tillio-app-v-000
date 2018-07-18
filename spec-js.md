@@ -12,7 +12,7 @@ Specs:
       Completed: New Garden Resource, New Clipping Resource
 - [X] Translate JSON responses into js model objects.
       Completed: Plants Details on Garden show page
-- [ ] At least one of the js model objects must have at least one method added by your code to the prototype.
+- [X] At least one of the js model objects must have at least one method added by your code to the prototype.
       Completed: Built a formatter for the plants details on garden show page
 
 Confirm
