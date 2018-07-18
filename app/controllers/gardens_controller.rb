@@ -27,6 +27,7 @@ class GardensController < ApplicationController
   end
 
   def show_specific
+    @gardens = Garden.findGardens(params[:id])
     render :layout => false
   end
 
