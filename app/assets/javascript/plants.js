@@ -25,11 +25,11 @@ $(function(){
 
   Plant.prototype.formatPlant = function(){
     let html = ''
-    html += `<h4>Kind: ${this.kind}</h4>`
+    html += `<p>I'm a ${this.kind}</p>`
     html += `<p>${this.desc}</p>`
-    html += `<p>Thrives at zone ${this.zone}</p>`
-    html += `<p>Needs ${this.light} light and ${this.water} watering</p>`
-    html += `Often good for ${this.categories}`
+    html += `<p>I thrive at zone ${this.zone}</p>`
+    html += `<p>I need ${this.light} light and ${this.water} watering</p>`
+    html += `I'm especially good for ${this.categories}`
     return html
   }
 })
