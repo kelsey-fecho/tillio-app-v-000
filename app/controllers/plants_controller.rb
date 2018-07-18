@@ -8,9 +8,9 @@ class PlantsController < ApplicationController
     @plants = Plant.all
   end
 
-  def kind
-    binding.pry
+  def findKinds
     @plants = Plant.where(kind: params[:kind])
+    render :index
   end
 
   def show

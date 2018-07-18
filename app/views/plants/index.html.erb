@@ -1,7 +1,7 @@
-<% if params[:action] === "index"%>
-  <h1>Browsing All Plants</h1>
+<% if params[:kind]%>
+  <h1>Browsing <%= params[:kind]%></h1>
 <% else %>
-  <h1>Browsing <%= params[:action] %></h1>
+  <h1>Browsing All Plants</h1>
 <% end %>
 
 <% @plants.each do |p|%>
