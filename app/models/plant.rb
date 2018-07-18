@@ -5,11 +5,7 @@ class Plant < ActiveRecord::Base
   validates :name, presence: true
   validates :kind, presence: true
 
-  def self.perennials
-    self.where(kind: "Perennial")
-  end
-
-  def self.trees
-    self.where(kind: "Tree")
+  def self.kinds
+    self.all.map{|p| p.kind}.uniq
   end
 end
