@@ -26,6 +26,10 @@ class GardensController < ApplicationController
     @cuser = current_user
   end
 
+  def show_specific
+    render :layout => false
+  end
+
   private
 
   def garden_params

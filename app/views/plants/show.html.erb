@@ -15,6 +15,13 @@
 <p>Disease Susceptibility: <%= @p.susceptibility %></p>
 
 <hr>
+<div id="see_in_action">
+  <%= link_to "See This Plant in Action", new_user_path, :id => "plant_gardens" %>
+  <div id="plantGardensList">
+  </div>
+</div>
+
+<hr>
 <%= form_for :clipping, :url => clippings_path do |c| %>
   <h2>Fallen for this plant?</h2>
   <%= c.hidden_field :plant_id, value: @p.id %>

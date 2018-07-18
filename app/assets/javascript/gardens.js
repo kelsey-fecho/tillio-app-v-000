@@ -11,4 +11,13 @@ $(function(){
     });
     e.preventDefault();
   })
+
+  $(function(){
+    $("a#plant_gardens").on("click", function(e){
+      $.get(this.href).success(function(response){
+        $("div#plantGardensList").html(response)
+      })
+      e.preventDefault();
+    })
+  })
 })
