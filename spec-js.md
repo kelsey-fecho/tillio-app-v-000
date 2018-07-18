@@ -2,17 +2,18 @@
 
 Specs:
 - [x] Use jQuery for implementing new requirements
-- [ ] Include a show resource rendered using jQuery and an Active Model Serialization JSON backend.
-      Completed: Plant Show scroll
+- [X] Include a show resource rendered using jQuery and an Active Model Serialization JSON backend.
+      Completed: Gardens page renders the plant show info on click event
 - [X] Include an index resource rendered using jQuery and an Active Model Serialization JSON backend.
       Completed: Gardens show page has clippings index w/ user-submittable ratings form
 - [X] Include at least one has_many relationship in information rendered via JSON and appended to the DOM.
-      On Plant show page, click "See In Action" to see Gardens where that plant is used
+      Completed: On Plant show page, click "See In Action" to see Gardens where that plant is used
 - [X] Use your Rails API and a form to create a resource and render the response without a page refresh.
       Completed: New Garden Resource, New Clipping Resource
 - [X] Translate JSON responses into js model objects.
-      Plants Details on Garden show page
+      Completed: Plants Details on Garden show page
 - [ ] At least one of the js model objects must have at least one method added by your code to the prototype.
+      Completed: Built a formatter for the plants details on garden show page
 
 Confirm
 - [X] You have a large number of small Git commits
