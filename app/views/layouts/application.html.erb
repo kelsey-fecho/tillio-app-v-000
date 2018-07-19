@@ -9,6 +9,7 @@
 <body>
   <div class="nav">
     <a href="http://localhost:3000/"><%= image_tag "Tillio.jpg" %></a><br>
+    <%= link_to "Gardens", root_path %>
     <%= link_to "All Plants", plants_path %>
     <% @kinds.each do |k|%>
       <%= link_to k, plant_kinds_path(k) %>
