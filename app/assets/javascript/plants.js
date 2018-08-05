@@ -21,9 +21,8 @@ $(function(){
     let html = ''
     html += `<p>I'm a ${this.kind}</p>`
     html += `<p>${this.desc}</p>`
-    html += `<p>I thrive at zone ${this.zone}</p>`
+    html += `<p>I thrive at zone ${this.zone} and I'm especially good for ${this.categories}</p>`
     html += `<p>I need ${this.light} light and ${this.water} watering</p>`
-    html += `I'm especially good for ${this.categories}`
     return html
   }
 
