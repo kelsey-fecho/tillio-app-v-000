@@ -15,7 +15,7 @@ $(function(){
   $(function(){
     $("a#plant_gardens").on("click", function(e){
       $.getJSON(this.href, function(data){
-        let formatted = data.map(garden => new Garden(garden.name, e.target).formatGarden())
+        let formatted = data.map(garden => new Garden(garden.name, garden.id).formatGarden())
         $("div#plantGardensList").html(formatted)
       })
       e.preventDefault();
@@ -23,15 +23,15 @@ $(function(){
   })
 })
 
-function Garden(name, href) {
+function Garden(name, id) {
   this.name = name
-  this.href = href
+  this.id = id
 }
 
 Garden.prototype.formatGarden = function(){
   let html=''
     html += `<ul>`
-    html += `<li><a href=${this.href}>${this.name}<a></li>`
+    html += `<li><a href="http://localhost:3000/gardens/${this.id}"">${this.name}<a></li>`
     html += `</ul>`
   return html
 }
