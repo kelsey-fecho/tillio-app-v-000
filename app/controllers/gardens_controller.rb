@@ -28,7 +28,10 @@ class GardensController < ApplicationController
 
   def show_specific
     @gardens = Garden.findGardens(params[:id])
-    render :layout => false
+    respond_to do |format|
+      format.html
+      format.json {render json: @gardens}
+    end
   end
 
   private
