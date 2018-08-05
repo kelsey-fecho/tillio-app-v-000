@@ -15,7 +15,7 @@ $(function(){
   $(function(){
     $("a#plant_gardens").on("click", function(e){
       $.getJSON(this.href, function(data){
-        let formatted = data.map(garden => new Garden(garden.name, garden.target).formatGarden())
+        let formatted = data.map(garden => new Garden(garden.name, e.target).formatGarden())
         $("div#plantGardensList").html(formatted)
       })
       e.preventDefault();
