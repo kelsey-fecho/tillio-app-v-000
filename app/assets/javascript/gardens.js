@@ -12,7 +12,10 @@ $(function(){
     e.preventDefault();
   })
 
-  $(function(){
+
+  // <li id=`garden-${garden.id}-details`>
+  //   <%= link_to garden.name, garden_path(garden) %>
+  // </li>
     $("a#plant_gardens").on("click", function(e){
       $.getJSON(this.href, function(data){
         let formatted = data.map(garden => new Garden(garden.name, garden.id).formatGarden())
@@ -20,18 +23,18 @@ $(function(){
       })
       e.preventDefault();
     })
-  })
+
+  function Garden(name, id) {
+    this.name = name
+    this.id = id
+  }
+
+  Garden.prototype.formatGarden = function(){
+    let html=''
+      html += `<ul>`
+      html += `<li><a href="http://localhost:3000/gardens/${this.id}"">${this.name}<a></li>`
+      html += `</ul>`
+    return html
+  }
+
 })
-
-function Garden(name, id) {
-  this.name = name
-  this.id = id
-}
-
-Garden.prototype.formatGarden = function(){
-  let html=''
-    html += `<ul>`
-    html += `<li><a href="http://localhost:3000/gardens/${this.id}"">${this.name}<a></li>`
-    html += `</ul>`
-  return html
-}
