@@ -1,3 +1,13 @@
 <li>
-  <h3><%= @clipping.plant.name%> - Rating: <%- @clipping.rating %></h3>
+  <h3><%= @clipping.plant.name%> - <%= link_to "Learn More", plant_path(@clipping.plant), :class => "plant-details"%></h3>
+  <%if !@clipping.rating && @user === @cuser%>
+    <%= form_for @clipping, :url => garden_clipping_path(@clipping.garden_id, @clipping.id) do |f| %>
+        <%= f.label :rating %>
+        <%= f.number_field :rating, in: 1...11 %>
+        <%= f.submit %>
+      <% end %>
+    <% else %>
+      <p>Rating: <%= @clipping.rating %></p>
+    <% end %>
+  <div id='plant-info-<%=@clipping.plant.id%>'></div>
 </li>
