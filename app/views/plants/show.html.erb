@@ -9,9 +9,9 @@
 
 <hr>
 <div id="see_in_action">
-  <%= link_to "See This Plant in Action", plant_gardens_path(@p), :id => "plant_gardens" %>
-  <div id="plantGardensList">
-  </div>
+  <%= link_to "See This Plant in Action", plant_gardens_path(@p), :id => "plant_gardens" %> - <%= link_to "Show plant alphabetically in action", plant_gardens_path(@p), :id => "alpha_plant_gardens" %>
+  <ul id="plantGardensList">
+  </ul>
 </div>
 
 <hr>
