@@ -1,7 +1,7 @@
 $(function(){
   $("#new_clipping").on("submit", function(e){
     $.ajax({
-       type: ($("input[name='_method']").val() || this.method),
+       type: 'post',
        url: this.action,
        data: $(this).serialize(),
        success: function(response){
