@@ -4,7 +4,7 @@ class ClippingsController < ApplicationController
   def create
     plant = Plant.find(params[:clipping][:plant_id])
     @garden = Garden.find(params[:clipping][:garden_id])
-    @clipping = Clipping.find_or_create_by(garden_id: @garden.id, plant_id: plant.id)
+    @clipping = Clipping.create(garden_id: @garden.id, plant_id: plant.id)
     if @clipping.save
       render 'clippings/show', :layout => false
     else
