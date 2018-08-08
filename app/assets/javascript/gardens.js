@@ -12,11 +12,6 @@ $(function(){
     e.preventDefault();
   })
 
-
-  // <li id=`garden-${garden.id}-details`>
-  //   <%= link_to garden.name, garden_path(garden) %>
-  // </li>
-
   $("a#alpha_plant_gardens").on("click", function(e){
     $.getJSON(this.href, function(data){
       let sorted = data.sort(sortAlphabetically)
